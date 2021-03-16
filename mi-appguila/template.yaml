@@ -8,17 +8,22 @@ Description: >
 # More info about Globals: https://github.com/awslabs/serverless-application-model/blob/master/docs/globals.rst
 Globals:
   Function:
-    Timeout: 3
+    Timeout: 30
+    Environment:
+      Variables: 
+        LON: -1.4
+        LAT: 52.92
+
 
 Resources:
-  HelloWorldFunction:
+  GetGeoPostFunction:
     Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
     Properties:
       CodeUri: mi_appguila/
       Handler: app.lambda_handler
       Runtime: python3.8
       Events:
-        HelloWorld:
+        GeoPost:
           Type: Api # More info about API Event Source: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#api
           Properties:
             Path: /hello
@@ -31,9 +36,22 @@ Outputs:
   HelloWorldApi:
     Description: "API Gateway endpoint URL for Prod stage for Hello World function"
     Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/hello/"
-  HelloWorldFunction:
+  GetGeoPostFunction:
     Description: "Hello World Lambda Function ARN"
-    Value: !GetAtt HelloWorldFunction.Arn
+    Value: !GetAtt GetGeoPostFunction.Arn
   HelloWorldFunctionIamRole:
     Description: "Implicit IAM Role created for Hello World function"
-    Value: !GetAtt HelloWorldFunctionRole.Arn
+    Value: !GetAtt GetGeoPostFunctionRole.Arn
+
+Parameters:
+  LAT: 
+    Type: String
+    Default: 51.64
+  
+  LON:
+    Type: String
+    Default : -1.47
+
+  LON1:
+    Type: String
+    Default : -1.47

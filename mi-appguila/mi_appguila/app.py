@@ -1,8 +1,6 @@
 import json
-
-# import requests
-
-
+import geo_codes as gc
+import os
 def lambda_handler(event, context):
     """Sample pure Lambda function
 
@@ -24,7 +22,7 @@ def lambda_handler(event, context):
 
         Return doc: https://docs.aws.amazon.com/apigateway/latest/developerguide/set-up-lambda-proxy-integrations.html
     """
-
+    #stack-miaguila-dev
     # try:
     #     ip = requests.get("http://checkip.amazonaws.com/")
     # except requests.RequestException as e:
@@ -32,11 +30,13 @@ def lambda_handler(event, context):
     #     print(e)
 
     #     raise e
-
+    #os.environ['LAT']
+    
+    LAT=event['queryStringParameters']['LAT']
+    LON=event['queryStringParameters']['LON']
+    var1=gc.getGeoPost(LON,LAT)
+    ##var1="###okkkk####"
     return {
         "statusCode": 200,
-        "body": json.dumps({
-            "message": "hello world",
-            # "location": ip.text.replace("\n", "")
-        }),
+        "body": json.dumps(var1)
     }

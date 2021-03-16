@@ -3,7 +3,7 @@
         {
             "type": "aws-sam",
             "request": "direct-invoke",
-            "name": "mi-appguila:HelloWorldFunction (python3.8)",
+            "name": "mi-appguila:HelloWorldFunction",
             "invokeTarget": {
                 "target": "template",
                 "templatePath": "mi-appguila/template.yaml",
@@ -12,6 +12,93 @@
             "lambda": {
                 "payload": {},
                 "environmentVariables": {}
+            }
+        },
+        {
+            "type": "aws-sam",
+            "request": "direct-invoke",
+            "name": "mi-appguila:HelloWorldFunction",
+            "invokeTarget": {
+                "target": "template",
+                "templatePath": "mi-appguila/template.yaml",
+                "logicalId": "HelloWorldFunction"
+            },
+            "lambda": {
+                "payload": {},
+                "environmentVariables": {}
+            }
+        },
+        {
+            "type": "aws-sam",
+            "request": "direct-invoke",
+            "name": "mi-appguila:HelloWorldFunction",
+            "invokeTarget": {
+                "target": "template",
+                "templatePath": "mi-appguila/template.yaml",
+                "logicalId": "HelloWorldFunction"
+            },
+            "lambda": {
+                "payload": {},
+                "environmentVariables": {}
+            }
+        },
+        {
+            "type": "aws-sam",
+            "request": "direct-invoke",
+            "name": "mi-appguila:HelloWorldFunction",
+            "invokeTarget": {
+                "target": "template",
+                "templatePath": "mi-appguila/template.yaml",
+                "logicalId": "HelloWorldFunction"
+            },
+            "lambda": {
+                "payload": {},
+                "environmentVariables": {}
+            }
+        },
+        {
+            "type": "aws-sam",
+            "request": "direct-invoke",
+            "name": "mi-appguila:HelloWorldFunction",
+            "invokeTarget": {
+                "target": "template",
+                "templatePath": "mi-appguila/template.yaml",
+                "logicalId": "HelloWorldFunction"
+            },
+            "lambda": {
+                "payload": {},
+                "environmentVariables": {}
+            }
+        },
+        {
+            "type": "aws-sam",
+            "request": "direct-invoke",
+            "name": "mi-appguila:HelloWorldFunction",
+            "invokeTarget": {
+                "target": "template",
+                "templatePath": "mi-appguila/template.yaml",
+                "logicalId": "HelloWorldFunction"
+            },
+            "lambda": {
+                "payload": {},
+                "environmentVariables": {}
+            }
+        },
+        {
+            "type": "aws-sam",
+            "request": "direct-invoke",
+            "name": "mi-appguila:HelloWorldFunction (python3.8)",
+            "invokeTarget": {
+                "target": "template",
+                "templatePath": "mi-appguila/template.yaml",
+                "logicalId": "HelloWorldFunction"
+            },
+            "lambda": {
+                "payload": {},
+                "environmentVariables": {
+                    "LON": "2.26",
+                    "LAT": "-53.4"
+                }
             }
         },
         {
